@@ -1,7 +1,9 @@
 #include <node.h>
 #include <iostream>
 
+// Assume this function controls the Arduino
 void ControlArduino() {
+    // Code to send signals to the Arduino
     std::cout << "Arduino is being controlled!" << std::endl;
 }
 

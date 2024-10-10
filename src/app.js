@@ -1,7 +1,7 @@
 import express from "express";
 import path from "path";
 import morgan from "morgan";
-import { theIPAddress, port } from './libraries/netConfig.js';
+import { theIPAddress, port } from './libraries/network/netConfig.js';
 import routerApi from "./routes/index.js";
 import { fileURLToPath } from "url";
 
@@ -22,6 +22,7 @@ app.set("view engine", "ejs");
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 (async () => {
   // Await the app to start listening on the specified IP address and port

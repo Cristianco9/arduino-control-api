@@ -1,4 +1,4 @@
-import ArduinoController from "../../../modules/build/Release/arduino_controller";
+const ArduinoController = require("../../../modules/build/Release/arduino_controller.node");
 
 class Arduino {
 
@@ -14,4 +14,4 @@ class Arduino {
   }
 }
 
-export default Arduino;
+module.exports = Arduino;

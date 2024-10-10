@@ -91,6 +91,14 @@ to the /control-arduino endpoint:
     GET http://host:3399/api/v1/arduino/test
    ```
 
+In the request body will need send JSON with the instruction to control the Arduino:
+
+   ```json
+   {
+     "command": "run-test"
+   }
+   ```
+
 This triggers the C++ module to interact with the Arduino, performing the specified action and logging the results.
 
 ## Goals

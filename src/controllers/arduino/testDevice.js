@@ -1,4 +1,4 @@
-import Arduino from "../../services/arduino/ArduinoServices.js";
+import Arduino from "../../services/arduino/ArduinoServices.cjs";
 
 const testDevice = async (req, res) => {
 
@@ -6,7 +6,10 @@ const testDevice = async (req, res) => {
 
   if (command === "run-test") {
     try {
-      const response = await Arduino.controlDevice();
+
+      const arduino = new Arduino();
+
+      const response = await arduino.controlDevice();
 
       if ( response.status === "EXECUTED SUCCESSFULLY" ) {
         return res.status(202).json({
