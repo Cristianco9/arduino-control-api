@@ -1,0 +1,36 @@
+{
+  "name": "arduino-control-api",
+  "version": "1.0.0",
+  "description": "API to control an Arduino a throw C++ modules",
+  "main": "src/app.js",
+  "type": "module",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dep-dev": "npm install && npm install nodemon morgan --save-dev -D",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cristianco9/arduino-control-api.git"
+  },
+  "keywords": [
+    "Node.js",
+    "JavaScript",
+    "C++",
+    "Arduino"
+  ],
+  "author": "Cristianco9 <cristian_cortes_ortiz@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Cristianco9/arduino-control-api/issues"
+  },
+  "homepage": "https://github.com/Cristianco9/arduino-control-api#readme"
+}
