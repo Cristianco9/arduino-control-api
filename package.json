@@ -14,7 +14,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dep-dev": "npm install && npm install nodemon morgan --save-dev -D",
+    "dep-dev": "npm install && npm install -g node-gyp && npm install nodemon morgan --save-dev -D && echo \"DEPENDENCIES INSTALLED\"",
+    "build-modules": "cd modules/ && node-gyp configure && node-gyp build && cd ../",
     "dev": "nodemon src/index.js"
   },
   "repository": {

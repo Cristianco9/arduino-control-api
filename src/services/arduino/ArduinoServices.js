@@ -1,4 +1,4 @@
-import ArduinoController from "../../../build/Release/arduino_controller";
+import ArduinoController from "../../../modules/build/Release/arduino_controller";
 
 class Arduino {
 
