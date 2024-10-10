@@ -6,7 +6,7 @@ class Arduino {
 
     try {
       await ArduinoController.execute();
-      console.log("Arduino control executed successfully.");
+      return { status: 'EXECUTED SUCCESSFULLY' };
     } catch(err) {
       console.error("Error controlling Arduino:", err.message);
       throw new Error("Failed to execute Arduino control.");
