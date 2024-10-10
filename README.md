@@ -76,7 +76,8 @@ Make sure you have the following installed on your machine:
     npm run dev
    ```
 
-## 📡  Usage
+## Usage
+### 📡
 
 After running the server, you can control the Arduino by sending a GET request
 to the /control-arduino endpoint:
@@ -87,7 +88,8 @@ to the /control-arduino endpoint:
 
 This triggers the C++ module to interact with the Arduino, performing the specified action and logging the results.
 
-## 🧠 Goals
+## Goals
+### 🧠
 
 This API aims to:
 
