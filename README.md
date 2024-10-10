@@ -70,26 +70,38 @@ Make sure you have the following installed on your machine:
     npm run dep-dev
    ```
 
-4. To start the development server and run the project, use the following command:
+4. Build the C++ modules:
+
+   ```sh
+    npm run build-modules
+   ```
+
+5. To start the development server and run the project, use the following command:
 
    ```sh
     npm run dev
    ```
 
 ## Usage
-### 📡
 
 After running the server, you can control the Arduino by sending a GET request
 to the /control-arduino endpoint:
 
    ```
-    GET http://host:3399/api/v1/test
+    GET http://host:3399/api/v1/arduino/test
+   ```
+
+In the request body will need send JSON with the instruction to control the Arduino:
+
+   ```json
+   {
+     "command": "run-test"
+   }
    ```
 
 This triggers the C++ module to interact with the Arduino, performing the specified action and logging the results.
 
 ## Goals
-### 🧠
 
 This API aims to:
 
