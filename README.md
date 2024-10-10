@@ -82,7 +82,7 @@ After running the server, you can control the Arduino by sending a GET request
 to the /control-arduino endpoint:
 
    ```
-    GET http://host:3399/api/v1/test
+    GET http://host:3399/api/v1/arduino/test
    ```
 
 This triggers the C++ module to interact with the Arduino, performing the specified action and logging the results.
