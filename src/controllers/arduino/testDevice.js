@@ -1,38 +1,47 @@
-import Arduino from "../../services/arduino/ArduinoServices.cjs";
+import Arduino from "../../services/arduino/Arduino.cjs";
 
 const testDevice = async (req, res) => {
 
   const { command } = req.body;
 
-  if (command === "run-test") {
-    try {
+  try {
 
-      const arduino = new Arduino();
+    const arduinoService = new Arduino('COM3');
 
-      const response = await arduino.controlDevice();
+    switch (command) {
 
-      if ( response.status === "EXECUTED SUCCESSFULLY" ) {
-        return res.status(202).json({
-          "success": "true",
-          "message": "Instruction executed successfully"
-        });
-      } else {
-        return res.status(503).json({
-          "success": "false",
-          "message": "The instruction could not be executed successfully"
-        });
-      }
-    } catch(err) {
-      console.error(err.message)
-      throw new Error("Failed to execute Arduino service.");
+      case 'abrir':
+        arduinoService.abrir();
+        break;
+      case 'cerrar':
+        arduinoService.cerrar();
+        break;
+      case 'contar':
+        arduinoService.contar();
+        break;
+      case 'regresivo':
+        arduinoService.regresivo();
+        break;
+      case 'saludo':
+        arduinoService.saludo();
+        break;
+      case 'pistola':
+        arduinoService.pistola();
+        break;
+      case 'sigsag':
+        arduinoService.sigsag();
+        break;
+      case 'groseria':
+        arduinoService.groseria();
+        break;
+      default:
+
     }
-  } else {
-    return res.status(406).json({
-      "success": "false",
-      "message": "command wrong. Try again"
-    });
+
+  } catch (error) {
+
   }
 
-};
+  };
 
 export default testDevice;
