@@ -1,12 +1,12 @@
-const SerialPort = require('serialport');
-const Readline = require('@serialport/parser-readline');
+const { SerialPort } = require('serialport');
+const { ReadlineParser } = require('@serialport/parser-readline');
 
 class ArduinoService {
 
   constructor(portPath) {
     // Configurar el puerto serial
-    this.port = new SerialPort(portPath, { baudRate: 9600 });
-    this.parser = this.port.pipe(new Readline({ delimiter: '\n' }));
+    this.port = new SerialPort({ path: portPath, baudRate: 9600 });
+    this.parser = this.port.pipe(new ReadlineParser({ delimiter: '\n' }));
 
     // Mostrar los mensajes recibidos del Arduino
     this.parser.on('data', (data) => {

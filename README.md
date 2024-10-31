@@ -1,7 +1,7 @@
 # Arduino Controller API with Node.js and C++
 
 ## 🚀 Project Overview
-This project is an API developed with Node.js, integrating a C++ module to
+This project is an web APP developed with javaScript, integrating a C++ module to
 control an Arduino. The API allows you to execute commands on an Arduino device
 through a simple RESTful interface, making it easy to interface with and control
 hardware remotely.
@@ -30,10 +30,12 @@ hardware remotely.
 ## Technologies Used
 
 - **JavaScript**
+- **HTML**
+- **CSS**
 - **Node.js**
 - **Express.js**
 - **C++**
-- **node-gyp**
+- **Arduino**
 
 ## Getting Started
 
@@ -70,13 +72,7 @@ Make sure you have the following installed on your machine:
     npm run dep-dev
    ```
 
-4. Build the C++ modules:
-
-   ```sh
-    npm run build-modules
-   ```
-
-5. To start the development server and run the project, use the following command:
+4. To start the development server and run the project, use the following command:
 
    ```sh
     npm run dev
@@ -84,22 +80,15 @@ Make sure you have the following installed on your machine:
 
 ## Usage
 
-After running the server, you can control the Arduino by sending a GET request
-to the /control-arduino endpoint:
+After running the server, you can control the Arduino by sending a request to the
+API a throw the web browser:
 
    ```
-    GET http://host:3399/api/v1/arduino/test
+    http://host:3399/app/v1/
    ```
 
-In the request body will need send JSON with the instruction to control the Arduino:
-
-   ```json
-   {
-     "command": "run-test"
-   }
-   ```
-
-This triggers the C++ module to interact with the Arduino, performing the specified action and logging the results.
+This triggers the C++ module to interact with the Arduino, performing the specified
+action and logging the results.
 
 ## Goals
 
